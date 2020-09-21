@@ -1,4 +1,10 @@
 ---
+# Optional method of pinning a specific version of Jenkins and/or overriding the
+# default Jenkins packaging URL.
+# jenkins_version: "1.644"
+# jenkins_pkg_url: "https://www.example.com"
+
+# Change this to `latest` to update Jenkins if a newer version is available.
 jenkins_package_state: present
 
 jenkins_prefer_lts: false
@@ -25,7 +31,7 @@ jenkins_plugins_install_dependencies: true
 jenkins_updates_url: "https://updates.jenkins.io"
 
 jenkins_admin_username: admin
-jenkins_admin_password: admin # this can be changed #
+jenkins_admin_password: admin
 jenkins_admin_password_file: ""
 
 jenkins_process_user: jenkins

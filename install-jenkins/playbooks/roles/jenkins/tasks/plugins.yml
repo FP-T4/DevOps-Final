@@ -1,4 +1,18 @@
 ---
+# jenkins_plugin module doesn't support password files.
+- name: Get Jenkins admin password from file.
+  slurp:
+    src: "{{ jenkins_admin_password_file }}"
+  register: adminpasswordfile
+  no_log: true
+  when: jenkins_admin_password_file | default(false)
+  tags: ['skip_ansible_lint']
+
+- name: Set Jenkins admin password fact.
+  set_fact:
+    jenkins_admin_password: "{{ adminpasswordfile['stdout'] | default(jenkins_admin_password) }}"
+  no_log: true
+
 # Update Jenkins so that plugin updates don't fail.
 - name: Create Jenkins updates directory.
   file:

@@ -6,9 +6,14 @@
   pre_tasks:
     - include_tasks: java-8.yml
 
+    - include_tasks: java-11.yml
+      when:
+        - ansible_distribution == 'Debian'
+        - ansible_distribution_major_version == '10'
+
   roles:
-    - role: java
-    - role: jenkins
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkins
 
   post_tasks:
     - name: Check if Jenkins is running.
