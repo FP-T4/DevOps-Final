@@ -1,3 +1,6 @@
+[jenkins]
+localhost
+
 [dockerswarm]
 qa-manager
 qa-worker1
