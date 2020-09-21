@@ -14,7 +14,7 @@
 - name: Modify variables in init file.
   lineinfile:
     dest: "{{ jenkins_init_file }}"
-    insertafter: '^{{ item.option }}='
+    insertafter: "^{{ item.option }}="
     regexp: '^{{ item.option }}=\"\${{ item.option }} '
     line: '{{ item.option }}="${{ item.option }} {{ item.value }}"'
     state: present
@@ -34,22 +34,22 @@
 - name: Set the Jenkins home directory.
   lineinfile:
     dest: "{{ jenkins_init_file }}"
-    regexp: '^JENKINS_HOME=.*'
-    line: 'JENKINS_HOME={{ jenkins_home }}'
+    regexp: "^JENKINS_HOME=.*"
+    line: "JENKINS_HOME={{ jenkins_home }}"
     mode: 0644
   register: jenkins_home_config
 
 - name: Immediately restart Jenkins on init config changes.
   service: name=jenkins state=restarted
   when: jenkins_init_prefix.changed
-  tags: ['skip_ansible_lint']
+  tags: ["skip_ansible_lint"]
 
 - name: Set HTTP port in Jenkins config.
   lineinfile:
     backrefs: true
     dest: "{{ jenkins_init_file }}"
-    regexp: '^{{ jenkins_http_port_param }}='
-    line: '{{ jenkins_http_port_param }}={{ jenkins_http_port }}'
+    regexp: "^{{ jenkins_http_port_param }}="
+    line: "{{ jenkins_http_port_param }}={{ jenkins_http_port }}"
     mode: 0644
   register: jenkins_http_config
 
@@ -83,4 +83,4 @@
     or (jenkins_http_config is defined and jenkins_http_config.changed)
     or (jenkins_home_config is defined and jenkins_home_config.changed)
     or (jenkins_proxy_config is defined and jenkins_proxy_config.changed)
-  tags: ['skip_ansible_lint']
+  tags: ["skip_ansible_lint"]

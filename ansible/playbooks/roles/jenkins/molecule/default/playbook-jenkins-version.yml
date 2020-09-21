@@ -17,7 +17,7 @@
         warn: false
       changed_when: false
       register: jenkins_rpm_version
-      tags: ['skip_ansible_lint']
+      tags: ["skip_ansible_lint"]
 
     - name: Print installed Jenkins package information.
       debug: var=jenkins_rpm_version

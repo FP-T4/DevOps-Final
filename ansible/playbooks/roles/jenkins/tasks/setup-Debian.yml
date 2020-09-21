@@ -18,7 +18,7 @@
     state: present
     update_cache: true
   when: jenkins_repo_url | default(false)
-  tags: ['skip_ansible_lint']
+  tags: ["skip_ansible_lint"]
 
 - name: Download specific Jenkins version.
   get_url:

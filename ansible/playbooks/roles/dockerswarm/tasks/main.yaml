@@ -1,30 +1,30 @@
 # Install Packages
-- name: 'update apt and install preliminary packages'
+- name: "update apt and install preliminary packages"
   apt:
     pkg:
-    - python3
-    - git
-    - python3-pip
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - gnupg-agent
-    - software-properties-common
+      - python3
+      - git
+      - python3-pip
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
     state: latest
     update_cache: true
 
 #  Make sure docker-py is uninstalled to make sure there complications with the python versioning and Ansbile
-- name: pip uninstall docker-py    
+- name: pip uninstall docker-py
   pip:
     name: docker-py
     state: absent
 
-- name: pip reinstall docker    
+- name: pip reinstall docker
   pip:
     name: docker
     state: latest
 
-- name: 'add GPG key'
+- name: "add GPG key"
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
@@ -34,12 +34,12 @@
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename|lower }} stable"
     state: present
 
-- name: 'latest version of Docker Engine and containerd'
+- name: "latest version of Docker Engine and containerd"
   apt:
     pkg:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
     state: latest
     update_cache: true
 
@@ -48,5 +48,3 @@
     name: "{{ ansible_user }}"
     group: docker
     state: present
-
-

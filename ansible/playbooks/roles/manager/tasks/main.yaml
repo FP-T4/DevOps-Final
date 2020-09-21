@@ -1,4 +1,3 @@
-
 #  init swarm
 - name: Initialise Docker Swarm
   docker_swarm:
@@ -9,7 +8,7 @@
   docker_swarm:
     state: inspect
   register: swarm_info
-  
+
 #  check if notes are there
 - name: Inspect Swarm Nodes
   docker_swarm_info:
