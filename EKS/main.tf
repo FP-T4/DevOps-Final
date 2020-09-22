@@ -54,11 +54,7 @@ module "Routing" {
 
   vpc_id = module.VPC.vpc_id
 
-  private_eks_subnet_az_1_id = module.Subnets.private_eks_subnet_az1_id
-  private_eks_subnet_az_2_id = module.Subnets.private_eks_subnet_az2_id
-
-  public_subnet_az_1_id = module.Subnets.public_subnet_az1_id
-  public_subnet_az_2_id = module.Subnets.public_subnet_az2_id
+  private_eks_subnet_az_1_id = module.Subnets.private_eks_subnet1_id
 
   rds_subnet_1_id = module.Subnets.rds_subnet_1_id
   rds_subnet_2_id = module.Subnets.rds_subnet_2_id
