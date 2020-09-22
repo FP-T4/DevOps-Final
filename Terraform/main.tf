@@ -15,10 +15,10 @@ module "deployment_sg" {
   ingress_ports = var.HTTP-ports
 }
 
-module "Controller Node" {
+module "Controller_Node" {
   source                 = "./EC2"
   subnet_id              = module.aws_vpc.DeploymentSubnet
-  vpc_security_group_ids = module.deployment_sg.id
+  vpc_sg_ids             = module.deployment_sg.id
   tags = {
     Name = "Deployment_Controller_Node"
   }
