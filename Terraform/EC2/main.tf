@@ -1,6 +1,6 @@
 resource "aws_instance" "Controller" {
   ami                         = var.ami
-  instance_type               = var.instance_type
+  instance_type               = var.instance-type
   key_pair                    = var.key_pair
   subnet_id                   = var.subnet_id
   vpc_sg_ids                  = var.vpc_sg_ids
