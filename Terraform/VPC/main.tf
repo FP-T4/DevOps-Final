@@ -13,6 +13,14 @@ resource "aws_subnet" "DeploymentSubnet"{
   cidr_block        = var.dsn-cidr-block
   availability_zone = data.aws_availability_zones.available.names[0]
   vpc_id            = aws_vpc.DeploymentVPC.id
+  map_public_ip_on_launch = true
+}
+
+resource "aws_subnet" "DeploymentSubnet2"{
+  cidr_block        = var.dsn2-cidr-block
+  availability_zone = data.aws_availability_zones.available.names[1]
+  vpc_id            = aws_vpc.DeploymentVPC.id
+  map_public_ip_on_launch = true
 }
 
 resource "aws_internet_gateway" "IGW" {

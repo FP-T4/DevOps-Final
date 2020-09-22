@@ -17,10 +17,17 @@ module "deployment_sg" {
 
 module "Controller_Node" {
   source                 = "./EC2"
-  subnet_id              = module.aws_vpc.vpc_id
+  subnet_id              = module.aws_vpc.dsn_id
   vpc_sg_ids             = module.deployment_sg.aws_wsg_id
   tags = {
     Name = "Deployment_Controller_Node"
   }
   associate_public_ip_address = true
+}
+
+module "EKS" {
+  source        = "./EKS"
+  subnet_id     = module.aws_vpc.dsn_id
+  subnet2_id    = module.aws_vpc.dsn2_id
+
 }

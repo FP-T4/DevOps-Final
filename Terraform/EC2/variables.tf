@@ -10,7 +10,7 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "AWS Key Name"
-  default     = "???"
+  default     = "instance1-keypair"
 }
 
 variable "subnet_id" {
