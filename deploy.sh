@@ -24,10 +24,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 #nginx
 sudo apt install -y nginx
 
-#minikube
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo apt install minikube-linux-amd64 /usr/local/bin/minikube
-
 #terraform
 sudo apt install -y unzip wget
 wget https://releases.hashicorp.com/terraform/0.12.12/terraform_0.12.12_linux_amd64.zip
