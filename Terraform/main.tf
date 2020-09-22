@@ -17,8 +17,8 @@ module "deployment_sg" {
 
 module "Controller_Node" {
   source                 = "./EC2"
-  subnet_id              = module.aws_vpc.DeploymentSubnet
-  vpc_sg_ids             = module.deployment_sg.id
+  subnet_id              = module.aws_vpc.vpc_id
+  vpc_sg_ids             = module.deployment_sg.aws_wsg_id
   tags = {
     Name = "Deployment_Controller_Node"
   }
