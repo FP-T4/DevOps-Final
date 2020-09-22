@@ -30,6 +30,3 @@ wget https://releases.hashicorp.com/terraform/0.12.12/terraform_0.12.12_linux_am
 unzip terraform_*_linux_*.zip
 sudo mv terraform /usr/local/bin
 rm terraform_*_linux_*.zip
-
-#git clone
-git clone https://github.com/FP-T4/DevOps-Final.git
