@@ -3,12 +3,12 @@ variable "ami" {
   default     = "ami-04137ed1a354f54c4"
 }
 
-variable "instance-type" {
+variable "instance_type" {
   description = "Type of instance to be started up"
   default     = "t2.micro"
 }
 
-variable "key_pair" {
+variable "key_name" {
   description = "AWS Key Name"
   default     = "???"
 }
