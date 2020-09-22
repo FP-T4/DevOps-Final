@@ -26,5 +26,5 @@ services:
       protocol: tcp
     volumes:
     - type: bind
-      source: ./nginx.conf
+      source: /home/Chris/DevOps-Final/nginx/nginx.conf
       target: /etc/nginx/nginx.conf
