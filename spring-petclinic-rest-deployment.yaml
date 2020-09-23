@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: spring-petclinic-rest
+  name: spring-petclinic-rest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: spring-petclinic-rest
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: spring-petclinic-rest
+    spec:
+      containers:
+      - image: sch0tterfoinfoin/spring-petclinic-rest
+        imagePullPolicy: ""
+        name: spring-petclinic-rest
+        ports:
+        - containerPort: 9966
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
