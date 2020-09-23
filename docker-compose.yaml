@@ -18,6 +18,10 @@ services:
       protocol: tcp
     deploy:
       replicas: 1
+    environment:
+      DATABASE_URI: mysql://root:petclinic@34.105.200.45/petclinic
+
+
   nginx:
     image: nginx:latest
     ports:
