@@ -33,6 +33,7 @@ resource "aws_eks_cluster" "aws_eks" {
 
   vpc_config {
     subnet_ids = [ var.subnet_id, var.subnet2_id ]
+    endpoint_public_access = true
   }
 
   tags = {
@@ -81,8 +82,8 @@ resource "aws_eks_node_group" "node" {
   subnet_ids      = [ var.subnet_id, var.subnet2_id ]
 
   scaling_config {
-    desired_size = 2
-    max_size     = 3
+    desired_size = 1
+    max_size     = 2
     min_size     = 1
   }
 
