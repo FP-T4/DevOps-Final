@@ -10,7 +10,7 @@ services:
     deploy:
       replicas: 1
 
-      
+
   spring-petclinic-rest:
     build: ./spring-petclinic-rest
     image: sch0tterfoinfoin/spring-petclinic-rest
@@ -20,7 +20,14 @@ services:
       protocol: tcp
     deploy:
       replicas: 1
-    
+    environment:
+    - DATABASE_HOST=mysql://petclinic.cqiciqdkt0xw.eu-west-1.rds.amazonaws.com:3066/petclinic
+    - DATABASE_USER=pc 
+    - DATABASE_PASSWORD=petclinic
+    - DATABASE_NAME=petclinic
+    - DATABASE_PORT=3306
+
+      
 
   nginx:
     image: nginx:latest
