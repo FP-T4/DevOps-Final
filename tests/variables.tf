@@ -25,3 +25,7 @@ variable "associate_public_ip_address" {
   description = "Should this EC2 instance have a public ip addresss"
   default     = true
 }
+
+variable "region" {
+  description = 
+}
