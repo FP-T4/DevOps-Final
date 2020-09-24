@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Database'){
             steps{
-                sh pwd
+                sh 'pwd'
                 sh './scripts/database.sh'
             }
         }
