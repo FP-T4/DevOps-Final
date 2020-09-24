@@ -27,6 +27,15 @@ spec:
       - image: sch0tterfoinfoin/spring-petclinic-rest
         imagePullPolicy: ""
         name: spring-petclinic-rest
+        env:
+        #  - name: DB_URI
+        #    value: "petclinic.cqiciqdkt0xw.eu-west-1.rds.amazonaws.com"
+          - name: DB_USER
+            value: "pc"
+        #  - name: DB_PASS
+        #    value: "petclinic"
+        #  - name: DB_PORT
+        #    value: "3306"
         ports:
         - containerPort: 9966
         resources: {}

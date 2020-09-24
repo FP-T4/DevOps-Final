@@ -20,7 +20,12 @@ services:
       protocol: tcp
     deploy:
       replicas: 1
-  
+   # environment:
+   #   DB_URI: ${DB_URI}
+   #   DB_PASS: ${DB_PASS}
+   #   DB_USER: ${DB_USER}
+   #   DB_PORT: ${DB_PORT}
+
 
       
 
