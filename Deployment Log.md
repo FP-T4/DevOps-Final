@@ -1,7 +1,5 @@
 # Deployment Log
 
-
-
 ## Setup Activities (Terraform +  Ansible)
 
 For carrying out deployment, there will need to be an initial setup before automated deployment can take place which consists of provisioning the required network resources through the use of Terraform which also configures an EC2 instance to act as the controller node.
