@@ -1,0 +1,6 @@
+cd
+cd DevOps-Final/tests/spring-petclinic-rest
+sudo apt update
+sudo apt install maven
+mvn -version
+mvn test
