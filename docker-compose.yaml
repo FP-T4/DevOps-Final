@@ -10,7 +10,7 @@ services:
     deploy:
       replicas: 1
 
-      
+
   spring-petclinic-rest:
     build: ./spring-petclinic-rest
     image: sch0tterfoinfoin/spring-petclinic-rest
@@ -20,7 +20,9 @@ services:
       protocol: tcp
     deploy:
       replicas: 1
-    
+  
+
+      
 
   nginx:
     image: nginx:latest
