@@ -8,6 +8,8 @@ GitHub - https://github.com/FP-T4/DevOps-Final
 
 JIRA -
 
+Presentation - https://docs.google.com/presentation/d/1p8sLxj92gDXeC7vLiV8LVWazdrUlEUyVo8wa92VAP_4/edit?usp=sharing
+
 ## Project Brief -
 
 Deploy a two part application which has been externally developed in accordance to DevOps principles on a cloud based system network.
